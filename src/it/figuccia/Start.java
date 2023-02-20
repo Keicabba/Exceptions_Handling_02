@@ -6,7 +6,7 @@ public class Start {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int dividend, divisor;
-        while (true) {
+        for (String wantContinue = "";!wantContinue.equals("no"); wantContinue = input.next()) {
             while (true) {
                 System.out.print("Please enter the dividend: ");
                 if (input.hasNextInt()) {
@@ -32,8 +32,11 @@ public class Start {
                 } else
                     System.out.println("The value is not valid, please enter an integer.");
                 input.nextLine(); // consume the invalid input
-            }
 
+            }
+            System.out.println("Do you want contine? (press any key to continue. \"no\" for quit)");
         }
+        System.out.println("Exiting");
+        input.close();
     }
 }
